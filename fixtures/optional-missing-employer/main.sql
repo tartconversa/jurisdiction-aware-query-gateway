@@ -1,7 +1,7 @@
 BEGIN TRANSACTION;
-CREATE TABLE "employers" (district TEXT, code TEXT, name TEXT, private_phone TEXT, PRIMARY KEY(district,code));
-INSERT INTO "employers" VALUES('east','21','北仓','000-44');
-INSERT INTO "employers" VALUES('west','22','南仓','000-55');
+CREATE TABLE "employers" (district TEXT, code TEXT, name TEXT, private_phone TEXT, restricted_to TEXT, PRIMARY KEY(district,code));
+INSERT INTO "employers" VALUES('east','21','北仓','000-44',NULL);
+INSERT INTO "employers" VALUES('west','22','南仓','000-55',NULL);
 CREATE TABLE "grants" (actor TEXT, purpose TEXT, district TEXT, valid_from INTEGER, valid_to INTEGER, revision INTEGER, may_columns TEXT);
 INSERT INTO "grants" VALUES('helper','assist','east',0,24,1,'name');
 CREATE TABLE "jobs" (id TEXT PRIMARY KEY, district TEXT, code TEXT, title TEXT);

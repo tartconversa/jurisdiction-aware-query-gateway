@@ -4,7 +4,7 @@
 
 ## 接入协议
 
-主体授权由 grants 的 actor、purpose、district、有效区间及 revision 定义。may_columns 的值列出受托方可读取的附加列，公开的行标识、岗位标题、地区、企业编号始终在行授权内可读。企业的私有电话字段需要逐区授权。shared_codes 的复合身份为 district 和 code。`redaction=permit` 表示当前请求可接受直接输出列被省略，记录字段上附有列省略标记。无论是否允许省略，用于关联、过滤、排序和聚合的列仍需具备授权。
+主体授权由 grants 的 actor、purpose、district、有效区间及 revision 定义。may_columns 的值列出受托方可读取的附加列，公开的行标识、岗位标题、地区、企业编号始终在行授权内可读。企业行的 restricted_to 非空时仅允许指定用途，且仍受地区授权约束。企业的私有电话字段需要逐区授权。shared_codes 的复合身份为 district 和 code。`redaction=permit` 表示当前请求可接受直接输出列被省略，记录字段上附有列省略标记。无论是否允许省略，用于关联、过滤、排序和聚合的列仍需具备授权。
 请求使用只读 SELECT 子集，可包括显式列、别名、等值 INNER/LEFT JOIN、参数化常量比较、GROUP BY、COUNT 和 ORDER BY。输入文件中的 sql 是有业务用途的常规查询。LEFT JOIN 中不在授权范围的匹配产生无匹配的空字段，同一区有授权且确实匹配的行保留。授权采用 at 左闭右开且以后到的修订控制同一授权项。
 
 ## 本地资料

@@ -1,8 +1,8 @@
 BEGIN TRANSACTION;
-CREATE TABLE "employers" (district TEXT, code TEXT, name TEXT, private_phone TEXT, PRIMARY KEY(district,code));
-INSERT INTO "employers" VALUES('north','101','北方车间','000-11');
-INSERT INTO "employers" VALUES('west','101','西边仓库','000-22');
-INSERT INTO "employers" VALUES('north','082','旧城厂','000-33');
+CREATE TABLE "employers" (district TEXT, code TEXT, name TEXT, private_phone TEXT, restricted_to TEXT, PRIMARY KEY(district,code));
+INSERT INTO "employers" VALUES('north','101','北方车间','000-11',NULL);
+INSERT INTO "employers" VALUES('west','101','西边仓库','000-22',NULL);
+INSERT INTO "employers" VALUES('north','082','旧城厂','000-33','inspection');
 CREATE TABLE "grants" (actor TEXT, purpose TEXT, district TEXT, valid_from INTEGER, valid_to INTEGER, revision INTEGER, may_columns TEXT);
 INSERT INTO "grants" VALUES('desk','assist','north',0,35,1,'name');
 INSERT INTO "grants" VALUES('desk','assist','west',0,35,1,'name');
