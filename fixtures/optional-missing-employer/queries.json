@@ -1,0 +1,4 @@
+{
+  "list": "SELECT j.id, e.name FROM jobs AS j LEFT JOIN employers AS e ON j.district=e.district AND j.code=e.code WHERE j.district=:area ORDER BY j.id",
+  "phone_directory": "SELECT j.id, e.name FROM jobs AS j LEFT JOIN employers AS e ON j.district=e.district AND j.code=e.code WHERE j.district=:area ORDER BY e.private_phone"
+}

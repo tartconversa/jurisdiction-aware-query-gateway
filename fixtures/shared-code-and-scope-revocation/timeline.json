@@ -1,0 +1,95 @@
+[
+  {
+    "pos": 1,
+    "kind": "prepare",
+    "actor": "desk",
+    "purpose": "assist",
+    "query": "find"
+  },
+  {
+    "pos": 2,
+    "kind": "execute",
+    "actor": "desk",
+    "purpose": "assist",
+    "query": "find",
+    "parameters": {
+      "area": "north"
+    },
+    "page_size": 1,
+    "redaction": "permit",
+    "cursor": "n1"
+  },
+  {
+    "pos": 3,
+    "kind": "execute",
+    "actor": "city",
+    "purpose": "assist",
+    "query": "find",
+    "parameters": {
+      "area": "west"
+    },
+    "page_size": 1,
+    "redaction": "permit",
+    "cursor": "w1"
+  },
+  {
+    "pos": 4,
+    "kind": "execute",
+    "actor": "desk",
+    "purpose": "assist",
+    "query": "count",
+    "parameters": {
+      "area": "north"
+    }
+  },
+  {
+    "pos": 5,
+    "kind": "authorize",
+    "actor": "desk",
+    "purpose": "assist",
+    "district": "west",
+    "revision": 2,
+    "validity": [
+      0,
+      5
+    ],
+    "may_columns": []
+  },
+  {
+    "pos": 6,
+    "kind": "authorize",
+    "actor": "desk",
+    "purpose": "assist",
+    "district": "north",
+    "revision": 2,
+    "validity": [
+      0,
+      6
+    ],
+    "may_columns": []
+  },
+  {
+    "pos": 7,
+    "kind": "continue",
+    "actor": "desk",
+    "cursor": "n1"
+  },
+  {
+    "pos": 8,
+    "kind": "continue",
+    "actor": "city",
+    "cursor": "w1"
+  },
+  {
+    "pos": 9,
+    "kind": "execute",
+    "actor": "desk",
+    "purpose": "assist",
+    "query": "find",
+    "parameters": {
+      "area": "west"
+    },
+    "page_size": 1,
+    "redaction": "permit"
+  }
+]

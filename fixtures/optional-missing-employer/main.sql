@@ -1,0 +1,13 @@
+BEGIN TRANSACTION;
+CREATE TABLE "employers" (district TEXT, code TEXT, name TEXT, private_phone TEXT, PRIMARY KEY(district,code));
+INSERT INTO "employers" VALUES('east','21','北仓','000-44');
+INSERT INTO "employers" VALUES('west','22','南仓','000-55');
+CREATE TABLE "grants" (actor TEXT, purpose TEXT, district TEXT, valid_from INTEGER, valid_to INTEGER, revision INTEGER, may_columns TEXT);
+INSERT INTO "grants" VALUES('helper','assist','east',0,24,1,'name');
+CREATE TABLE "jobs" (id TEXT PRIMARY KEY, district TEXT, code TEXT, title TEXT);
+INSERT INTO "jobs" VALUES('J8','east','21','物流');
+INSERT INTO "jobs" VALUES('J9','east','22','配装');
+CREATE TABLE "shared_codes" (district TEXT, code TEXT, meaning TEXT, PRIMARY KEY(district,code));
+INSERT INTO "shared_codes" VALUES('east','21','分类甲');
+INSERT INTO "shared_codes" VALUES('west','22','分类甲');
+COMMIT;

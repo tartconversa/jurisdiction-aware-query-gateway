@@ -1,0 +1,18 @@
+{
+  "databases": {
+    "main": {
+      "file": "main.sql",
+      "rows": {
+        "jobs": 5,
+        "employers": 3,
+        "shared_codes": 3,
+        "grants": 4
+      }
+    }
+  },
+  "events": 9,
+  "documents": [
+    "queries.json"
+  ],
+  "settings": {}
+}

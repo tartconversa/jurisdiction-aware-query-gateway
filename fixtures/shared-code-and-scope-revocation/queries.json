@@ -1,0 +1,4 @@
+{
+  "find": "SELECT j.id, j.title, e.name, e.private_phone FROM jobs AS j LEFT JOIN employers AS e ON j.district=e.district AND j.code=e.code WHERE j.district=:area ORDER BY j.id",
+  "count": "SELECT j.district, COUNT(e.name) AS matched FROM jobs AS j LEFT JOIN employers AS e ON j.district=e.district AND j.code=e.code WHERE j.district=:area GROUP BY j.district"
+}
